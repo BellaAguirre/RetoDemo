@@ -12,10 +12,33 @@
     <h3 id="bienvenida"> BIENVENID@ </h3><!-- Este elemento nos permite agregar el nombre del usuario -->
     <hr/>
   </header>
+  <section id="sectionLogin">
+    <h3>Ingresa tu nombre: </h3>
+    <input type="text" id="name">
+    <input type="button" id="btn1" onclick="enviar()" value="Enviar">
+</section>
+  <!-- Iniciar partida -->
   <section id="sectionQuestion">
     <h3>¿Lista para jugar?</h3>
     <input type="button" id="btn2" value="Aceptar" onclick="aceptar()">
     <input type="button" id="btn3" value="Cancelar" onclick="cancelar()">
+</section>
+<!--Preguntas-->
+<section id="sectionQuiz">
+  <form id="quiz">
+      <h2>Preguntas</h2><br>
+      <strong>1.¿Cuál es la bebida preferida de Gonzalo?</strong><br>
+      <input type="radio" id="answerOne" name="answerOne" value="Agua"><label id="a1">Agua</label> 
+      <input type="radio" id="answerOne2" name = "answerOne" value="Cerveza" ><label id="a2">Cerveza</label> <br>
+      <input type="radio" id="answerOne2" name = "answerOne" value="Vino" ><label id="a2">Vino</label> <br>
+      <strong>2.¿Qué es lo que más le gusta hacer a Lulú?</strong><br>
+      <input type="radio" id="answerTwo" name="answerTwo" value="Cantar"><label id="a3">Cantar</label> 
+      <input type="radio" id="answerTwo2" name="answerTwo" value="Dibujar"><label id="a4">Dibujar</label> <br>
+      <input type="radio" id="answerTwo2" name="answerTwo" value="Programar"><label id="a4">Programar</label> <br>  
+      <input type="button" id="eval" value="evaluar" onclick="evaluar()">   
+      <h3 id="score"></h3>
+  </form>
+  
 </section>
   <!-- RESULTADOS -->
   <section>
