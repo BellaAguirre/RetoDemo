@@ -1,21 +1,21 @@
   // Mandamos a llamar a los elmentos del HTML que se van a manipular
 var saludarUsario = document.getElementById('bienvenida'); 
 var mostrarResultados = document.getElementById('contenedorPrincipal');
+var iniciarPartida = document.getElementById('sectionQuestion');
 var respuestasCorrectas = document.getElementById('respuestasCorrectas');
 var respuestasIncorrectas= document.getElementById('respuestasIncorrectas');
 var nombreUsuario = prompt("Ingresa tu nombre:");
 
 saludarUsario.innerHTML = "😊 Bienvenid@ " + nombreUsuario + " 😊" ;
 
-var iniciarPartida = parseInt(prompt("Ingresa el número que corresponda a tu respuesta \n ¿Quieres iniciar la partida? \n 1.Si \n 2.No"));
+//var iniciarPartida = parseInt(prompt("Ingresa el número que corresponda a tu respuesta \n ¿Quieres iniciar la partida? \n 1.Si \n 2.No"));
 
 // Evaluamos las respuestas del usuario (para iniciar el juego)
-
-mostrarResultados.style.display = '';
-if (iniciarPartida == 2) {//CASO 1; EN EL QUE EL USUARIO NO QUIERA JUGAR
-  mostrarResultados.innerHTML =  "<h1>Gracias por visitarnos, nos vemos la próxima 😉 </h1>";
-} 
-else {//Caso en el que SI quiera continuar con el juego
+mostrarResultados.style.visibility = 'hidden';
+function aceptar()
+{
+  iniciarPartida.style.display='none';
+  mostrarResultados.style.visibility = 'visible';
   respuestasCorrectas.innerHTML = "<h4> Preguntas correctas </h4>";
   respuestasIncorrectas.innerHTML = "<h4> Preguntas incorrectas </h4>";
 
@@ -36,4 +36,9 @@ else {//Caso en el que SI quiera continuar con el juego
   } else {
     respuestasIncorrectas.innerHTML += "<br> 2.¿Qué es lo que más le gusta hacer a Lulú? <br> <strong>Respuesta correcta:</strong> 🎤 Cantar 🎤";
   }
+}
+function cancelar()
+{
+  iniciarPartida.style.display = '';
+  mostrarResultados.innerHTML =  "<h1>Gracias por visitarnos, nos vemos la próxima 😉 </h1>";
 }
